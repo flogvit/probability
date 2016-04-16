@@ -35,11 +35,11 @@ For 48 numbers where you pick 6 (standard norwegian viking lotto)
 
 run | percentage
 --- | ---
-1 | 64
-2 | 64
-3 | 64
-4 | 64
-5 | 64
+1 | 50
+2 | 50
+3 | 50
+4 | 50
+5 | 50
 
 ### Picking same numbers vs picking different numbers
 
@@ -55,3 +55,22 @@ run | same | different
 2 | 4978 | 5022
 
 I guess it does not really matter what you do, there is no real difference.
+
+### Picking same numbers with adjacent vs picking different numbers
+
+Ok, we saw that it is very probable that you will find two numbers adjacent in a winning draw. So perhaps
+you then think it is smart to pick two numbers adjacent when you set up your numbers? Well, let us test
+
+*Answer* LottoAdjacentSameNumbers
+
+Each run test 1000 rounds of first winner, same as picking same numbers, but we're making sure we have
+at least two adjacent numbers in our same numbers. The different numbers are just random.
+
+run | same | different
+--- | --- | ---
+1 | 475 | 525
+2 | 495 | 505
+3 | 497 | 503
+4 | 526 | 474
+
+

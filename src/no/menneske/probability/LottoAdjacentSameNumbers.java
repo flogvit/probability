@@ -23,8 +23,8 @@ import java.util.Random;
  * The result is, as predicted, there is no difference.
  */
 
-public class LottoSameNumbers {
-    final int RUNCOUNT = 10000;
+public class LottoAdjacentSameNumbers {
+    final int RUNCOUNT = 1000;
     final int NUMBERS = 34;
     final int PICKCOUNT = 7;
 
@@ -50,7 +50,7 @@ public class LottoSameNumbers {
     int pickDifferentCount = 0;
 
     public static void main(String[] args) {
-        LottoSameNumbers lottoSameNumbers = new LottoSameNumbers();
+        LottoAdjacentSameNumbers lottoSameNumbers = new LottoAdjacentSameNumbers();
         lottoSameNumbers.run();
     }
 
@@ -83,6 +83,10 @@ public class LottoSameNumbers {
     public void oneRun() {
         // First we fill the pickSame for the whole run
         fill(pickSame);
+
+        // Easy check. Just set the second number to adjacent
+        if (pickSame[0]!=pickSame[1]-1)
+            pickSame[1] = pickSame[0]+1;
 
         boolean found = false;
         long count = 0;

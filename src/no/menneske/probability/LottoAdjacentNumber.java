@@ -14,8 +14,8 @@ import java.util.Random;
  */
 public class LottoAdjacentNumber {
     final int RUNCOUNT = 10000000;
-    final int NUMBERS = 34;
-    final int PICKCOUNT = 7;
+    final int NUMBERS = 48;
+    final int PICKCOUNT = 6;
 
     // All the numbers. Easy way to pick the numbers
     Integer[] numbers = new Integer[NUMBERS];
@@ -62,7 +62,7 @@ public class LottoAdjacentNumber {
     public void fill(Integer[] array) {
         int pos = 0;
         while(pos<PICKCOUNT) {
-            int num =rnd.nextInt(34);
+            int num =rnd.nextInt(NUMBERS);
             // If it is already picked, try again
             if (numbers[num]==-1) continue;
 
